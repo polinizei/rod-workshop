@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>Custom Metering Rod für Zweitakt-Vergaser · Workshop | Xyger Rennsport</title>
+<meta name="description" content="Workshop für eine Custom Metering Rod: Vergaser-Abstimmung über die Rod, erarbeitet gemeinsam mit dir. SmartCarb, Lectron, Mikuni, Keihin. Kontakt über das GSF.">
+<link rel="canonical" href="https://polinizei.github.io/rod-workshop/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://polinizei.github.io/rod-workshop/">
+<meta property="og:title" content="Custom Metering Rod für Zweitakt-Vergaser · Workshop">
+<meta property="og:description" content="Abstimmung über die Rod, erarbeitet gemeinsam mit dir. SmartCarb, Lectron, Mikuni, Keihin.">
+<meta property="og:locale" content="de_DE">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Custom Metering Rod Workshop für Zweitakt-Vergaser","serviceType":"Vergaser-Abstimmung über eine individuell gefertigte Metering Rod","provider":{"@type":"Organization","name":"Xyger Rennsport","url":"https://polinizei.github.io/rod-workshop/"},"areaServed":"Europe","audience":{"@type":"Audience","audienceType":"Zweitakt- und Vespa-Tuning"},"description":"Workshop über drei Wochenenden: der Kunde fährt und dokumentiert die Tests, Xyger wertet aus, coacht und fertigt die Rod-Kontur. Für SmartCarb, Lectron, Mikuni und Keihin."}</script>
+<!-- Xyger Rod-Workshop Landingpage v0.2.0 | 2026-10-24 | _personal/xyger/rod-workshop/index.html
+     Entscheidungen: kein Preis, keine Messwerte, keine Fertigungsdetails. Kontakt nur GSF-PN, Mail als Pflichtangabe. Kein WhatsApp.
+     Deutsch steht statisch im HTML (ohne JavaScript lesbar, fuer Suchmaschinen ohne Rendering). Englisch per data-en. -->
+<style>
+  :root{--bar:#2b2f33;--bar-ink:#f2f3f4;--bg:#ffffff;--card:#ffffff;--soft:#f6f7f8;--ink:#1b1f24;--muted:#6b7280;--line:#d9dcdf;--accent:#ea580c;--accent-ink:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Roboto Condensed","Arial Narrow",system-ui,sans-serif;font-stretch:condensed}
+  .bar{background:var(--bar);color:var(--bar-ink)}
+  .bar .in{max-width:760px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand svg{display:block;height:52px;width:auto} @media(max-width:899px){ .brand svg{height:44px} }
+  .lang{display:flex;gap:4px}
+  .lang button{background:transparent;border:0;border-bottom:2px solid transparent;color:#c9cdd1;font:inherit;font-weight:700;letter-spacing:.08em;font-size:13px;min-height:40px;padding:4px 8px;cursor:pointer}
+  .lang button[aria-pressed="true"]{color:#fff;border-bottom-color:var(--accent)}
+  .wrap{max-width:760px;margin:0 auto;padding:20px 16px 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+  .wrap>*{min-width:0}
+  h1{font-size:26px;line-height:1.15;margin:0;text-transform:uppercase;letter-spacing:.02em}
+  .tagline{margin:6px 0 0;color:var(--muted);font-size:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h2{font-size:18px;margin:0 0 8px;text-transform:uppercase;letter-spacing:.02em}
+  .card p{margin:0 0 10px;font-size:15px} .card p:last-child{margin-bottom:0}
+  .card ul{margin:0;padding-left:18px;font-size:15px} .card li{margin:0 0 6px} .card li:last-child{margin-bottom:0}
+  .cta{background:var(--soft)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}
+  textarea{width:100%;margin:12px 0 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical}
+  .muted{color:var(--muted);font-size:14px}
+  footer{border-top:1px solid var(--line);margin-top:6px;padding-top:14px;font-size:14px;color:var(--muted)}
+  footer a{color:var(--accent)} a{color:var(--accent)}
+  .ok{color:var(--accent);font-weight:700;font-size:14px;margin:8px 0 0}
+  [hidden]{display:none!important}   /* sonst gewinnt display:inline-flex der Buttons gegen hidden */
+</style>
+</head>
+<body>
+<header class="bar"><div class="in"><a class="brand" href="./" aria-label="Xyger Rennsport"><svg role="img" aria-label="Xyger Rennsport" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="262 228 276 114"><defs><path id="font_1_42" d="M.6826172 .04107666C.6507161 .028045655 .60929366 .015335083 .5583496 .0029449464 .5074056-.009435018 .457194-.015625 .40771485-.015625 .29345704-.015625 .20239258 .01735433 .13452149 .08331299 .06665039 .14927165 .032714845 .24283855 .032714845 .36401368 .032714845 .47801719 .06665039 .5693817 .13452149 .6381073 .20239258 .7068431 .2952474 .74121096 .41308595 .74121096 .47395835 .74121096 .5234375 .7354431 .56152346 .7239075 .5996094 .712382 .6389974 .69671127 .6796875 .67689517V.50683596H.66308596C.6542969 .51364138 .6416829 .52327987 .62524417 .53575137 .60880538 .54822286 .59277346 .5588277 .57714846 .5675659 .55891928 .5779317 .5378418 .58683779 .513916 .59428408 .48999024 .60174056 .464681 .60546877 .43798829 .60546877 .40673829 .60546877 .37825523 .6005707 .35253907 .59077456 .3268229 .5809784 .3038737 .5659587 .2836914 .54571536 .2644857 .52612307 .24926758 .5013072 .23803711 .4712677 .22680664 .4412384 .2211914 .40630595 .2211914 .36647035 .2211914 .2812551 .24251302 .21840413 .28515626 .17791748 .32779948 .13743083 .38606773 .1171875 .45996095 .1171875 .46647135 .1171875 .4741211 .11735026 .48291017 .11767578 .49169923 .118001308 .49934898 .118489589 .5058594 .119140628V.26171876H.3647461V.39941407H.6826172V.04107666Z"/><path id="font_1_72" d="M.3461914-.0146484379C.24267578-.0146484379 .16333008 .010131836 .1081543 .059692384 .052978517 .10925293 .025390625 .17985027 .025390625 .27148438 .025390625 .36114503 .05110677 .43271385 .10253906 .4861908 .15397136 .5396678 .22591146 .56640627 .31835938 .56640627 .40234376 .56640627 .46549479 .54374697 .5078125 .49842835 .5501302 .4531199 .57128909 .38824464 .57128909 .3038025V.2421875H.19677735C.19840496 .21661377 .20377605 .19521587 .21289063 .17799378 .2220052 .16078186 .23404949 .14709473 .24902344 .13693238 .26367188 .12675984 .28076173 .11946106 .30029298 .11503601 .31982423 .11061096 .34114585 .10839844 .3642578 .10839844 .3841146 .10839844 .40364585 .11061096 .42285157 .11503601 .44205729 .11947123 .4596354 .125295 .47558595 .13250733 .48958335 .13874309 .50252279 .14546712 .5144043 .15267945 .5262858 .15990193 .53597006 .16630046 .54345706 .171875H.56152346V.030761719C.54752609 .025227866 .5347493 .020100913 .52319338 .015380859 .5116374 .010660808 .49576823 .005859375 .47558595 .0009765625 .45703126-.00390625 .4379069-.0077311198 .4182129-.010498047 .3985189-.013264974 .37451173-.0146484379 .3461914-.0146484379M.40283204 .34570313C.40185548 .3819987 .3934733 .4096273 .37768556 .42858888 .3618978 .44755046 .33772788 .45703126 .30517579 .45703126 .27197267 .45703126 .24601238 .4470571 .22729492 .42710877 .20857747 .40717063 .19824219 .3800354 .19628906 .34570313H.40283204Z"/><path id="font_1_85" d="M.43359376 .38671876H.4194336C.4129232 .3889974 .40348307 .3907064 .39111329 .3918457 .3787435 .39298503 .36507163 .3935547 .35009767 .3935547 .332194 .3935547 .31339518 .39095054 .29370118 .3857422 .27400718 .38053385 .2548828 .37434898 .23632813 .3671875V0H.06542969V.5488281H.23632813V.47013856C.24414063 .47731019 .2549642 .48635356 .26879884 .49726869 .28263346 .5081838 .2952474 .51689657 .30664063 .523407 .3190104 .5309041 .3334147 .53733828 .34985353 .54270938 .36629234 .54809066 .38183595 .55078127 .39648438 .55078127 .40201823 .55078127 .40820313 .55061849 .41503907 .55029299 .421875 .54996749 .4280599 .5494792 .43359376 .5488281V.38671876Z"/><path id="font_1_92" d="M.5776367 .5488281 .30078126-.20117188H.1171875L.20019531 .013320923-.0009765625 .5488281H.17871094L.2939453 .20484925 .40185548 .5488281H.5776367Z"/><path id="font_1_59" d="M.69091799 0H.4790039L.33935548 .23208618 .19677735 0H-.0053710939L.23046875 .36645509 .00390625 .72753909H.21533203L.3461914 .5081482 .48046876 .72753909H.68310549L.45507813 .3737793 .69091799 0Z"/><path id="font_2_51" d="M.2539978 .31399537H.49299623C.55799868 .31399537 .59399417 .28799439 .59399417 .23899842 .59399417 .22200012 .59098818 .20098877 .58599856 .1789856 .56199648 .07899475 .56199648 .07899475 .56199648 .04699707 .56199648 .0309906 .5629883 .019989014 .56599429 0H.67900088L.6839905 .022994996C.67099 .034988405 .6629944 .053985597 .6629944 .07598877 .6629944 .08699036 .6649933 .10398865 .6689911 .12599182 .6879883 .23098755 .6899872 .24398804 .6899872 .2639923 .6899872 .30899049 .6769867 .32899476 .6299896 .3600006 .6689911 .38198854 .68499758 .3929901 .7029877 .40899659 .7429962 .44599916 .769989 .5130005 .769989 .57499697 .769989 .68099978 .71199038 .72898867 .58399966 .72898867H.24798584L.09298706 0H.18699646L.2539978 .31399537M.2709961 .3959961 .32499696 .6469879H.5549927C.60798647 .6469879 .6339874 .6399994 .6529999 .61898806 .66600039 .6049957 .673996 .58200076 .673996 .55799868 .673996 .519989 .6599884 .47698976 .6380005 .44898988 .60899356 .41299439 .56599429 .3959961 .5019989 .3959961H.2709961Z"/><path id="font_2_1" d=""/><path id="font_2_70" d="M.5629883 .23399353C.57699587 .31199647 .5799866 .33599855 .5799866 .36799623 .5799866 .46499635 .49699403 .5389862 .3889923 .5389862 .3019867 .5389862 .21899414 .49798585 .16799927 .43099977 .12098694 .36799623 .083999637 .25498963 .083999637 .17298889 .083999637 .11898804 .10798645 .06399536 .1459961 .026992798 .18099976-.007003784 .22499085-.023010254 .28199769-.023010254 .4019928-.023010254 .5049896 .050994874 .5359955 .15899658H.45199586C.41600038 .08999634 .36299134 .053985597 .29599 .053985597 .21699524 .053985597 .17199707 .102996829 .17199707 .18798828 .17199707 .20999146 .17298889 .21899414 .1769867 .23399353H.5629883M.19499207 .30599977C.22099304 .397995 .29499818 .46199037 .37599183 .46199037 .44699098 .46199037 .49198915 .4139862 .49198915 .33898927 .49198915 .32998658 .4909973 .32199098 .4889984 .30599977H.19499207Z"/><path id="font_2_79" d="M.18099976 .5239868 .069992069 0H.1539917L.21499634 .2889862C.23899842 .39898683 .30899049 .46699525 .39898683 .46699525 .44898988 .46699525 .48599244 .43199159 .48599244 .38598634 .48599244 .37998963 .48399354 .3659973 .47999574 .34899903L.4059906 0H.48999024L.56999209 .37599183C.57299807 .3889923 .57398989 .40098573 .57398989 .4139862 .57398989 .48999024 .5209961 .5389862 .43798829 .5389862 .3619995 .5389862 .29599 .5119934 .24398804 .45899964L.25698854 .5239868H.18099976Z"/><path id="font_2_84" d="M.5139923 .37799073C.5189972 .39898683 .519989 .4079895 .519989 .42099 .519989 .4909973 .45399476 .5389862 .35598756 .5389862 .2849884 .5389862 .22399903 .5179901 .18299866 .47898866 .1459961 .44400025 .12298584 .3919983 .12298584 .34498597 .12298584 .28399659 .1579895 .25498963 .26098634 .22799683L.33499146 .20899964C.36799623 .19999695 .3829956 .19400025 .3919983 .18299866 .39898683 .17399597 .40499879 .15899658 .40499879 .1499939 .40499879 .1309967 .3899994 .100997928 .37298585 .08799744 .34799195 .066986087 .30499269 .053985597 .2619934 .053985597 .19198609 .053985597 .1539917 .08099365 .1539917 .1309967 .1539917 .13699341 .15499878 .1459961 .1559906 .1559906H.066986087C.06199646 .1329956 .06098938 .12098694 .06098938 .10499573 .06098938 .024993897 .12998963-.023010254 .24699402-.023010254 .3959961-.023010254 .49299623 .053985597 .49299623 .17298889 .49299623 .23399353 .45999146 .2659912 .37199403 .28799439L.29599 .30699159C.23999024 .32099916 .21099854 .34098817 .21099854 .36698915 .21099854 .3869934 .22299195 .4119873 .24099732 .42900086 .2649994 .45199586 .29499818 .46199037 .33898927 .46199037 .397995 .46199037 .43099977 .43998719 .43099977 .3999939 .43099977 .3939972 .43099977 .38598634 .42999269 .37799073H.5139923Z"/><path id="font_2_81" d="M.0069885256-.2130127H.09098816L.15098572 .067993167C.18199158 .0029907227 .22299195-.023010254 .2939911-.023010254 .37199403-.023010254 .44699098 .0129852299 .49798585 .07499695 .5519867 .14199829 .58599856 .24499512 .58599856 .34399415 .58599856 .46398927 .5189972 .5389862 .4119873 .5389862 .33399964 .5389862 .2539978 .49598695 .22698975 .43998719L.24499512 .5239868H.1639862L.0069885256-.2130127M.3789978 .46199037C.45399476 .46199037 .49798585 .41099549 .49798585 .32398988 .49798585 .2689972 .48098756 .20498657 .45399476 .15499878 .4169922 .08699036 .36698915 .053985597 .3019867 .053985597 .22799683 .053985597 .18299866 .10398865 .18299866 .18399048 .18299866 .24398804 .19999695 .30899049 .22999573 .36099244 .2669983 .42799378 .31698609 .46199037 .3789978 .46199037Z"/><path id="font_2_80" d="M.38398744 .5389862C.29100038 .5389862 .20899964 .49699403 .1579895 .4229889 .11299133 .35899354 .07998657 .24899292 .07998657 .1639862 .07998657 .052993776 .15699768-.023010254 .2689972-.023010254 .36499024-.023010254 .44099427 .015991211 .49699403 .09298706 .54299929 .1559906 .57598879 .2649994 .57598879 .35198976 .57598879 .40499879 .55599978 .45599366 .5209961 .48999024 .4869995 .522995 .44198609 .5389862 .38398744 .5389862M.37098695 .46199037C.44499208 .46199037 .48799134 .4149933 .48799134 .33299256 .48799134 .27398683 .47200013 .20899964 .44400025 .15899658 .4059906 .08999634 .35198976 .053985597 .2829895 .053985597 .21199036 .053985597 .16799927 .102996829 .16799927 .18399048 .16799927 .24198914 .18499756 .30699159 .21199036 .35699464 .24798584 .4249878 .30499269 .46199037 .37098695 .46199037Z"/><path id="font_2_83" d="M.17999268 .5239868 .068984989 0H.15299988L.21099854 .27198792C.23699951 .3939972 .30799867 .45498658 .41799928 .45098878L.43598939 .5359955C.4229889 .5379944 .4149933 .5389862 .4039917 .5389862 .34599305 .5389862 .3019867 .5130005 .23899842 .44198609L.2559967 .5239868H.17999268Z"/><path id="font_2_85" d="M.3659973 .5239868H.2769928L.30799867 .66799929H.22399903L.19299317 .5239868H.12199402L.10798645 .45700074H.1789856L.099990848 .08699036C.09799194 .07699585 .09700012 .06599426 .09700012 .055999757 .09700012 .0069885256 .1309967-.023010254 .18598938-.023010254 .20698548-.023010254 .23599243-.020004273 .25099183-.01600647L.2669983 .056991579C.23399353 .04899597 .23199463 .04899597 .21899414 .04899597 .19699097 .04899597 .18299866 .05999756 .18299866 .07598877 .18299866 .07899475 .18399048 .083999637 .18499756 .08999634L.2630005 .45700074H.35198976L.3659973 .5239868Z"/></defs><use data-text="G" xlink:href="#font_1_42" transform="matrix(66.42141,0,22.717597,-66.96,388.55085,320.7599)" fill="#9aa1a8"/><use data-text="e" xlink:href="#font_1_72" transform="matrix(86.34787,0,29.53258,-87.00001,435.2308,320.39988)" fill="#9aa1a8"/><path transform="matrix(0,.12,.12,0,0,0)" d="M3495 4490.92 2798 4234.92 1712 4632.92 3106 5143.92 4191 4745.92 3495 4490.92" fill="none" fill-rule="evenodd"/><use data-text="r" xlink:href="#font_1_85" transform="matrix(86.34787,0,29.53258,-87.00001,481.4308,320.51988)" fill="#9aa1a8"/><path transform="matrix(0,.12,.12,0,0,0)" d="M2296 2376.92 1599 2121.92 514 2519.92 1908 3030.92 2993 2631.92 2296 2376.92" fill="none" fill-rule="evenodd"/><use data-text="y" xlink:href="#font_1_92" transform="matrix(89.19465,0,30.506295,-89.99993,343.19087,319.79988)" fill="#9aa1a8"/><use data-text="X" xlink:href="#font_1_59" transform="matrix(138.53647,0,47.38238,-140.04029,265.9109,332.75987)" fill="#eef0f2"/><use data-text="R" xlink:href="#font_2_51" transform="matrix(22.292403,0,0,-17.039994,375.59086,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,391.67088,335.27986)" fill="#ffffff"/><use data-text="e" xlink:href="#font_2_70" transform="matrix(22.292403,0,0,-17.039994,397.9109,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,410.27088,335.27986)" fill="#ffffff"/><use data-text="n" xlink:href="#font_2_79" transform="matrix(22.292403,0,0,-17.039994,416.5109,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,428.8709,335.27986)" fill="#ffffff"/><use data-text="n" xlink:href="#font_2_79" transform="matrix(22.292403,0,0,-17.039994,435.11094,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,447.47096,335.27986)" fill="#ffffff"/><use data-text="s" xlink:href="#font_2_84" transform="matrix(22.292403,0,0,-17.039994,453.71098,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,464.87098,335.27986)" fill="#ffffff"/><use data-text="p" xlink:href="#font_2_81" transform="matrix(22.292403,0,0,-17.039994,471.111,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,483.47099,335.27986)" fill="#ffffff"/><use data-text="o" xlink:href="#font_2_80" transform="matrix(22.292403,0,0,-17.039994,489.711,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,502.071,335.27986)" fill="#ffffff"/><use data-text="r" xlink:href="#font_2_83" transform="matrix(22.292403,0,0,-17.039994,508.31105,335.27986)" fill="#ffffff"/><use data-text=" " xlink:href="#font_2_1" transform="matrix(22.292403,0,0,-17.039994,515.75106,335.27986)" fill="#ffffff"/><use data-text="t" xlink:href="#font_2_85" transform="matrix(22.292403,0,0,-17.039994,521.991,335.27986)" fill="#ffffff"/></svg></a>
+<div class="lang" id="lang"><button data-l="de">DE</button><button data-l="en">EN</button></div></div></header>
+<div class="wrap">
+
+  <div>
+    <h1 data-en="Custom metering rod for two-stroke carburettors">Custom Metering Rod für Zweitakt-Vergaser</h1>
+    <p class="tagline" data-en="Carburettor tuning through the rod, worked out together with you.">Abstimmung über die Rod, erarbeitet gemeinsam mit dir.</p>
+  </div>
+
+  <section class="card">
+    <h2 data-en="Why a stock rod stops being enough">Warum eine Serien-Rod irgendwann nicht mehr reicht</h2>
+    <p data-en="A stock rod is linear. On a high performance engine it therefore never fits across the whole load range. Set part throttle correctly and it goes lean at the top. Set full throttle safely and it runs rich at the bottom.">Eine Serien-Rod ist linear. Auf einem Hochleistungsmotor passt sie deshalb nie über den ganzen Lastbereich. Du stellst Teillast sauber ein und oben wird es mager. Du stellst Vollgas sicher ein und unten läuft er fett.</p>
+    <p data-en="The next rod number moves the problem, it does not solve it. What is missing is a profile that works differently in each range.">Die nächste Rod-Nummer verschiebt das Problem, sie löst es nicht. Was fehlt, ist eine Kontur, die in jedem Bereich anders arbeitet.</p>
+  </section>
+
+  <section class="card">
+    <h2 data-en="The workshop">Der Workshop</h2>
+    <p data-en="We tune your carburettor through a rod that is cut to your engine. You ride the tests and document them, I evaluate the data, coach you on your questions and finally machine the profile.">Wir stimmen deinen Vergaser über eine Rod ab, die auf deinen Motor zugeschnitten ist. Du fährst die Tests und dokumentierst, ich werte aus, coache dich bei deinen Fragen und fertige am Ende die Kontur.</p>
+    <p data-en="We work in three phases. First starting behaviour and idle, on the stand. Then part throttle up to half. Then the range from half to full throttle. Each phase on its own, never mixed.">Wir arbeiten in drei Phasen. Erst Startverhalten und Standgas im Stand. Dann Teillast bis halbes Gas. Dann der Bereich von halb bis Vollgas. Jede Phase einzeln, nie durchmischt.</p>
+    <p data-en="Everything runs through one shared document so every step stays traceable. Suitable carburettors are SmartCarb, Lectron, and Mikuni and Keihin once converted to rod technology.">Alles läuft über ein gemeinsames Dokument, damit jeder Schritt nachvollziehbar bleibt. Passende Vergaser sind SmartCarb, Lectron sowie Mikuni und Keihin nach einem Umbau auf Rod-Technik.</p>
+  </section>
+
+  <section class="card">
+    <h2 data-en="What you need to bring">Was du mitbringst</h2>
+    <ul>
+      <li data-en="A roadworthy vehicle and a road where you can safely ride at full throttle.">Ein fahrbereites Fahrzeug und eine Strecke, auf der du gefahrlos Vollgas fahren kannst.</li>
+      <li data-en="A vernier caliper.">Einen Messschieber.</li>
+      <li data-en="An exhaust gas temperature gauge. On sharp engines it is mandatory.">Eine Abgastemperaturanzeige. Auf scharfen Motoren ist sie Pflicht.</li>
+      <li data-en="Time across three weekends and the willingness to document properly.">Zeit über drei Wochenenden und die Bereitschaft, sauber zu dokumentieren.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 data-en="What this is not">Was das nicht ist</h2>
+    <p data-en="Not an off the shelf part and not a rod I send you unseen. Not a do it yourself guide.">Kein Teil von der Stange und keine Rod, die ich dir ungesehen zuschicke. Keine Bauanleitung zum Selbstmachen.</p>
+    <p data-en="The tuning comes out of your data and my evaluation, there is no other way.">Die Abstimmung entsteht aus deinen Daten und meiner Auswertung, anders funktioniert es nicht.</p>
+  </section>
+
+  <section class="card">
+    <h2 data-en="Language">Sprache</h2>
+    <p data-en="The workshop runs in German, English works too. If you are not confident in either language, that is not a problem.">Der Workshop läuft auf Deutsch, Englisch geht auch. Wenn du keine der beiden Sprachen sicher beherrschst, ist das kein Hindernis.</p>
+    <p data-en="Translate my instructions with an AI tool, that works very well today, and write back in your own language. I will help you set it up. My customers in Italy work exactly like that.">Übersetze meine Anleitungen mit einem KI-Tool, das funktioniert heute sehr gut, und schreib mir in deiner Sprache zurück. Beim Einrichten helfe ich dir. Meine Kunden in Italien arbeiten genau so.</p>
+  </section>
+
+  <section class="card cta">
+    <h2 data-en="How to get in touch">So nehmen wir Kontakt auf</h2>
+    <p data-en="Best through the GSF, the German Scooter Forum. Ask your question there in public or send me a personal message to Polinizei. I read along and answer tuning questions within a reasonable scope. Once it gets concrete we sort out the details in the personal message.">Am besten über das GSF, das German Scooter Forum. Stell deine Frage dort öffentlich oder schreib mir eine persönliche Nachricht an Polinizei. Ich lese mit und beantworte Fragen zur Abstimmung in einem vernünftigen Rahmen. Wenn es konkret wird, klären wir die Details in der persönlichen Nachricht.</p>
+    <p data-en="You need a forum account to send a message. That is intentional, it keeps automated enquiries out.">Für die Nachricht brauchst du ein Konto im Forum. Das ist Absicht, so bleiben automatisierte Anfragen draußen.</p>
+    <div class="btns">
+      <a class="btn" id="go" href="https://www.germanscooterforum.de/profile/1395-polinizei/" rel="noopener" data-en="Message Polinizei on the GSF">Nachricht an Polinizei im GSF</a>
+      <button class="btn ghost" id="cp" type="button" hidden data-en="Copy enquiry text">Anfragetext kopieren</button>
+    </div>
+    <p class="muted" data-en="Copy this text into your message and fill in the lines. The more precise your setup, the more concrete my answer.">Kopiere diesen Text in deine Nachricht und füll die Zeilen aus. Je genauer dein Setup, desto konkreter meine Antwort.</p>
+    <textarea id="tpl" rows="10" readonly aria-label="Anfragetext" data-en="Hello Michael, I am interested in a custom rod.
+Vehicle / engine:
+Carburettor (type and size):
+Exhaust:
+Ignition:
+Current problem:
+Exhaust gas temperature gauge available: yes / no
+Country:
+Found via:">Hallo Michael, ich interessiere mich für eine Custom Rod.
+Fahrzeug / Motor:
+Vergaser (Typ und Größe):
+Auspuff:
+Zündung:
+Aktuelles Problem:
+Abgastemperaturanzeige vorhanden: ja / nein
+Land:
+Gefunden über:</textarea>
+    <p class="ok" id="okmsg" hidden data-en="Text copied, now paste it into your message.">Text kopiert, jetzt in die Nachricht einfügen.</p>
+  </section>
+
+  <footer>
+    <p>Xyger Rennsport, Michael Kladiwa &middot; <span data-en="E-mail">E-Mail</span>: <a href="mailto:portal.xyger@gmail.com">portal.xyger@gmail.com</a></p>
+    <p><a href="impressum.html" data-en="Legal notice and privacy">Impressum und Datenschutz</a></p>
+  </footer>
+
+</div>
+<script>
+// Deutsch steht statisch im HTML. Bei EN werden die Texte aus data-en eingesetzt, der deutsche Stand wird in data-de gesichert.
+function setLang(l){
+  document.documentElement.lang = l;
+  try{ localStorage.setItem("xrw_lang", l); }catch(e){}
+  document.querySelectorAll("#lang button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.l === l); });
+  document.querySelectorAll("[data-en]").forEach(function(el){
+    var isArea = el.tagName === "TEXTAREA";
+    if(el.dataset.de === undefined) el.dataset.de = isArea ? el.value : el.textContent;
+    var txt = (l === "en") ? el.dataset.en : el.dataset.de;
+    if(isArea){ el.value = txt; } else { el.textContent = txt; }
+  });
+  document.getElementById("okmsg").hidden = true;
+}
+document.getElementById("lang").addEventListener("click", function(e){ var b = e.target.closest("button"); if(b) setLang(b.dataset.l); });
+// Kopier-Button erst einblenden, wenn JavaScript laeuft. Ohne JavaScript markiert man den Text von Hand.
+var cp = document.getElementById("cp");
+cp.hidden = false;
+cp.addEventListener("click", function(){
+  var ta = document.getElementById("tpl");
+  var done = function(){ document.getElementById("okmsg").hidden = false; };
+  var fallback = function(){
+    ta.removeAttribute("readonly"); ta.select();
+    try{ document.execCommand("copy"); }catch(e){}
+    ta.setAttribute("readonly", "");
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(ta.value).then(done, function(){ fallback(); done(); });
+  } else { fallback(); done(); }
+});
+var L = "";
+try{ L = localStorage.getItem("xrw_lang") || ""; }catch(e){ L = ""; }
+if(L !== "de" && L !== "en") L = (navigator.language || "de").slice(0,2) === "de" ? "de" : "en";
+setLang(L);
+</script>
+</body>
+</html>
