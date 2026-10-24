@@ -14,7 +14,7 @@
 <meta property="og:locale:alternate" content="en_GB"><meta property="og:locale:alternate" content="it_IT">
 <meta property="og:locale:alternate" content="fr_FR"><meta property="og:locale:alternate" content="es_ES">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Custom Metering Rod Workshop für Zweitakt-Vergaser","serviceType":"Vergaser-Abstimmung über eine individuell gefertigte Metering Rod","provider":{"@type":"Organization","name":"Xyger Rennsport","url":"https://polinizei.github.io/rod-workshop/"},"areaServed":["DE","AT","CH","IT","FR","ES"],"availableLanguage":["de","en","it","fr","es"],"audience":{"@type":"Audience","audienceType":"Zweitakt- und Vespa-Tuning"},"description":"Workshop über drei Wochenenden: der Kunde fährt und dokumentiert die Tests, Xyger wertet aus, coacht und fertigt die Rod-Kontur. Für SmartCarb, Lectron, Mikuni und Keihin."}</script>
-<!-- Xyger Rod-Workshop Landingpage v0.3.0 | 2026-10-24 | _personal/xyger/rod-workshop/index.html
+<!-- Xyger Rod-Workshop Landingpage v0.4.0 | 2026-10-24 | _personal/xyger/rod-workshop/index.html
      Entscheidungen: kein Preis, keine Messwerte, keine Fertigungsdetails. Kontakt nur GSF-PN, Mail als Pflichtangabe. Kein WhatsApp.
      Sprachen DE/EN/IT/FR/ES wie im Ansauggummi-Konfigurator. Deutsch steht statisch im HTML (ohne JavaScript lesbar),
      die anderen Sprachen in data-en / data-it / data-fr / data-es. Erkennung aus navigator.languages, Wahl im localStorage. -->
@@ -219,6 +219,21 @@ Gefunden über:</textarea>
 <script>
 // Deutsch steht statisch im HTML. Die anderen Sprachen stehen in data-<lang> und werden erst beim Umschalten eingesetzt.
 var LANGS = ["de", "en", "it", "fr", "es"];
+// Herkunft aus ?via=... (z.B. ?via=alessandro). Wird nur an die letzte Zeile der Anfragevorlage gehaengt,
+// damit in der eingehenden Nachricht steht, woher der Interessent kommt. Keine Speicherung, keine Uebertragung.
+function viaName(){
+  var m = /[?&]via=([^&#]{1,40})/.exec(location.search);
+  if(!m) return "";
+  var v = decodeURIComponent(m[1].replace(/\+/g, " ")).replace(/[^\wÀ-ÿ .\-]/g, "").trim();
+  return v ? v.charAt(0).toUpperCase() + v.slice(1) : "";
+}
+var VIA = viaName();
+function withVia(text){
+  if(!VIA) return text;
+  var lines = text.split("\n");
+  lines[lines.length - 1] = lines[lines.length - 1] + " " + VIA;
+  return lines.join("\n");
+}
 function setLang(l){
   if(LANGS.indexOf(l) < 0) l = "en";
   document.documentElement.lang = l;
@@ -228,7 +243,7 @@ function setLang(l){
     var isArea = el.tagName === "TEXTAREA";
     if(el.dataset.de === undefined) el.dataset.de = isArea ? el.value : el.textContent;
     var txt = el.dataset[l] || el.dataset.en || el.dataset.de;
-    if(isArea){ el.value = txt; } else { el.textContent = txt; }
+    if(isArea){ el.value = withVia(txt); } else { el.textContent = txt; }
   });
   document.getElementById("okmsg").hidden = true;
 }
